@@ -32,6 +32,7 @@ package net.imagej.ops.math;
 
 import java.util.Random;
 
+import net.imagej.ops.AbstractBinaryComputerOp;
 import net.imagej.ops.AbstractComputerOp;
 import net.imagej.ops.Ops;
 import net.imglib2.type.numeric.RealType;
@@ -74,15 +75,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Add.class)
 	public static class Add<I extends RealType<I>, O extends RealType<O>> extends
-		AbstractComputerOp<I, O> implements Ops.Math.Add
+		AbstractBinaryComputerOp<I, Double, O> implements Ops.Math.Add
 	{
 
-		@Parameter
-		private double constant;
-
 		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(input.getRealDouble() + constant);
+		public void compute2(final I input1, final Double input2, final O output) {
+			output.setReal(input1.getRealDouble() + input2);
 		}
 	}
 
@@ -92,15 +90,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.And.class)
 	public static class AndConstant<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.And
+		extends AbstractBinaryComputerOp<I, Long, O> implements Ops.Math.And
 	{
 
-		@Parameter
-		private long constant;
-
 		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(constant & (long) input.getRealDouble());
+		public void compute2(final I input1, final Long input2, final O output) {
+			output.setReal(input2 & (long) input1.getRealDouble());
 		}
 	}
 
@@ -457,21 +452,19 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Divide.class)
 	public static class Divide<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.Divide
+		extends AbstractBinaryComputerOp<I, Double, O> implements Ops.Math.Divide
 	{
 
-		@Parameter
-		private double constant;
 		@Parameter
 		private double dbzVal;
 
 		@Override
-		public void compute(final I input, final O output) {
-			if (constant == 0) {
+		public void compute2(final I input1, final Double input2, final O output) {
+			if (input2 == 0) {
 				output.setReal(dbzVal);
 			}
 			else {
-				output.setReal(input.getRealDouble() / constant);
+				output.setReal(input1.getRealDouble() / input2);
 			}
 		}
 	}
@@ -673,15 +666,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Multiply.class)
 	public static class Multiply<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.Multiply
+		extends AbstractBinaryComputerOp<I, Double, O> implements Ops.Math.Multiply
 	{
 
-		@Parameter
-		private double constant;
-
 		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(input.getRealDouble() * constant);
+		public void compute2(final I input1, final Double input2, final O output) {
+			output.setReal(input1.getRealDouble() * input2);
 		}
 	}
 
@@ -721,15 +711,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Or.class)
 	public static class OrConstant<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.Or
+		extends AbstractBinaryComputerOp<I, Long, O> implements Ops.Math.Or
 	{
 
-		@Parameter
-		private long constant;
-
 		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(constant | (long) input.getRealDouble());
+		public void compute2(final I input1, final Long input2, final O output) {
+			output.setReal(input2 | (long) input1.getRealDouble());
 		}
 	}
 
@@ -739,15 +726,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Power.class)
 	public static class PowerConstant<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.Power
-	{
+	extends AbstractBinaryComputerOp<I, Double, O> implements Ops.Math.Power
+{
 
-		@Parameter
-		private double constant;
-
-		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(Math.pow(input.getRealDouble(), constant));
+	@Override
+	public void compute2(final I input1, final Double input2, final O output) {
+			output.setReal(Math.pow(input1.getRealDouble(), input2));
 		}
 	}
 
@@ -1019,15 +1003,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Subtract.class)
 	public static class Subtract<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.Subtract
+		extends AbstractBinaryComputerOp<I, Double, O> implements Ops.Math.Subtract
 	{
 
-		@Parameter
-		private double constant;
-
 		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(input.getRealDouble() - constant);
+		public void compute2(final I input1, final Double input2, final O output) {
+			output.setReal(input1.getRealDouble() - input2);
 		}
 	}
 
@@ -1084,15 +1065,12 @@ public final class RealMath {
 	 */
 	@Plugin(type = Ops.Math.Xor.class)
 	public static class XorConstant<I extends RealType<I>, O extends RealType<O>>
-		extends AbstractComputerOp<I, O> implements Ops.Math.Xor
-	{
+	extends AbstractBinaryComputerOp<I, Long, O> implements Ops.Math.Xor
+{
 
-		@Parameter
-		private long constant;
-
-		@Override
-		public void compute(final I input, final O output) {
-			output.setReal(constant ^ (long) input.getRealDouble());
+	@Override
+	public void compute2(final I input1, final Long input2, final O output) {
+			output.setReal(input2 ^ (long) input1.getRealDouble());
 		}
 	}
 

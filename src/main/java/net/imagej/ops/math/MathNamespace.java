@@ -248,7 +248,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.Add.class)
 	public <I extends RealType<I>, O extends RealType<O>> RealType<O> add(
-		final RealType<O> out, final RealType<I> in, final double constant)
+		final RealType<O> out, final RealType<I> in, final Double constant)
 	{
 		@SuppressWarnings("unchecked")
 		final RealType<O> result =
@@ -604,7 +604,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.AndConstant.class)
 	public <I extends RealType<I>, O extends RealType<O>> O and(final O out,
-		final I in, final long constant)
+		final I in, final Long constant)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
@@ -1026,7 +1026,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.Divide.class)
 	public <I extends RealType<I>, O extends RealType<O>> O divide(final O out,
-		final I in, final double constant, final double dbzVal)
+		final I in, final Double constant, final double dbzVal)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
@@ -1382,7 +1382,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.Multiply.class)
 	public <I extends RealType<I>, O extends RealType<O>> O multiply(final O out,
-		final I in, final double constant)
+		final I in, final Double constant)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
@@ -1493,7 +1493,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.OrConstant.class)
 	public <I extends RealType<I>, O extends RealType<O>> O or(final O out,
-		final I in, final long constant)
+		final I in, final Long constant)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
@@ -1517,7 +1517,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.PowerConstant.class)
 	public <I extends RealType<I>, O extends RealType<O>> O power(final O out,
-		final I in, final double constant)
+		final I in, final Double constant)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
@@ -1907,7 +1907,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.Subtract.class)
 	public <I extends RealType<I>, O extends RealType<O>> O subtract(final O out,
-		final I in, final double constant)
+		final I in, final Double constant)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
@@ -2041,7 +2041,7 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.RealMath.XorConstant.class)
 	public <I extends RealType<I>, O extends RealType<O>> O xor(final O out,
-		final I in, final long constant)
+		final I in, final Long constant)
 	{
 		@SuppressWarnings("unchecked")
 		final O result =
