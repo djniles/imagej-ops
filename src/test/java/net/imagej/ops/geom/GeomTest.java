@@ -31,6 +31,9 @@
 package net.imagej.ops.geom;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.awt.Color;
@@ -40,8 +43,13 @@ import java.net.MalformedURLException;
 
 import javax.imageio.ImageIO;
 
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import ij.io.Opener;
 import net.imagej.ops.Ops;
 import net.imagej.ops.features.AbstractFeatureTest;
+import net.imglib2.Cursor;
 import net.imglib2.RandomAccess;
 import net.imglib2.RealPoint;
 import net.imglib2.img.Img;
@@ -51,13 +59,10 @@ import net.imglib2.roi.labeling.ImgLabeling;
 import net.imglib2.roi.labeling.LabelRegion;
 import net.imglib2.roi.labeling.LabelRegions;
 import net.imglib2.roi.labeling.LabelingType;
+import net.imglib2.type.logic.BitType;
 import net.imglib2.type.numeric.integer.IntType;
 import net.imglib2.type.numeric.real.FloatType;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import ij.io.Opener;
+import net.imglib2.view.Views;
 
 /**
  * Tests for geom features
@@ -301,5 +306,40 @@ public class GeomTest extends AbstractFeatureTest {
 		assertEquals(Ops.Geometric.CenterOfGravity.NAME, 576.763804,
 				ops.geom().centerofgravity(img2d).getDoublePosition(1), AbstractFeatureTest.BIG_DELTA);
 	}
+	
+	@Test
+	public void testHoleDetectionAndExtraction() throws IOException {
 
+		// create two bittypes images
+		Img<FloatType> inputWithoutHoles = ImageJFunctions
+				.convertFloat(new Opener().openImage(GeomTest.class.getResource("cZgkFsK.png").getPath()));
+		Img<FloatType> inputWithHoles = ImageJFunctions.convertFloat(
+				new Opener().openImage(GeomTest.class.getResource("polygon_with_holes_21.png").getPath()));
+
+		Cursor<FloatType> inputWithoutHolesCursor = inputWithoutHoles.cursor();
+		Cursor<FloatType> inputWithHolesCursor = inputWithHoles.cursor();
+
+		Img<BitType> imgWithoutHoles = ops.create().img(inputWithoutHoles, new BitType());
+		Img<BitType> imgWithHoles = ops.create().img(inputWithHoles, new BitType());
+
+		Cursor<BitType> imgWithoutHolesCursor = imgWithoutHoles.cursor();
+		Cursor<BitType> imgWithHolesCursor = imgWithHoles.cursor();
+
+		while (inputWithoutHolesCursor.hasNext()) {
+			imgWithoutHolesCursor.next().set((inputWithoutHolesCursor.next().get() > 0) ? true : false);
+		}
+
+		while (inputWithHolesCursor.hasNext()) {
+			imgWithHolesCursor.next().set((inputWithHolesCursor.next().get() > 0) ? true : false);
+		}
+
+		assertFalse("No holes should be found!", ops.geom().holedetection(imgWithoutHoles, false));
+
+		assertNotNull("No image returned!", ops.geom().holeExtraction(imgWithoutHoles, false));
+
+		assertTrue("Holes should be found!", ops.geom().holedetection(imgWithHoles, false));
+
+		assertNotNull("An image with holes should be returned!",
+				ops.geom().holeExtraction(imgWithHoles, false));
+	}
 }

@@ -457,4 +457,32 @@ public class GeomNamespace extends AbstractNamespace {
 				in);
 		return result;
 	}
+	
+	@OpMethod(op = net.imagej.ops.geom.geom2d.DefaultHoleExtraction.class)
+	public <T extends BooleanType<T>> RandomAccessibleInterval<T> holeExtraction(final RandomAccessibleInterval<T> in) {
+		@SuppressWarnings("unchecked")
+		final RandomAccessibleInterval<T> result = (RandomAccessibleInterval<T>) ops().run(net.imagej.ops.geom.geom2d.DefaultHoleExtraction.class, in);
+		return result;
+	}
+
+	@OpMethod(op = net.imagej.ops.geom.geom2d.DefaultHoleExtraction.class)
+	public <T extends BooleanType<T>> RandomAccessibleInterval<T> holeExtraction(final RandomAccessibleInterval<T> in, final boolean whiteAsForeground) {
+		@SuppressWarnings("unchecked")
+		final RandomAccessibleInterval<T> result = (RandomAccessibleInterval<T>) ops().run(net.imagej.ops.geom.geom2d.DefaultHoleExtraction.class, in,
+				whiteAsForeground);
+		return result;
+	}
+
+	@OpMethod(op = net.imagej.ops.geom.geom2d.DefaultHoleDetection.class)
+	public <T extends BooleanType<T>> Boolean holedetection(final RandomAccessibleInterval<T> in) {
+		final Boolean result = (Boolean) ops().run(net.imagej.ops.geom.geom2d.DefaultHoleDetection.class, in);
+		return result;
+	}
+	
+	@OpMethod(op = net.imagej.ops.geom.geom2d.DefaultHoleDetection.class)
+	public <T extends BooleanType<T>> Boolean holedetection(final RandomAccessibleInterval<T> in, final boolean whiteAsForeground) {
+		final Boolean result = (Boolean) ops().run(net.imagej.ops.geom.geom2d.DefaultHoleDetection.class, in,
+				whiteAsForeground);
+		return result;
+	}
 }
