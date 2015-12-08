@@ -65,30 +65,30 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerAbs.class)
-	public int abs(final int a) {
-		final int result =
+	public Integer abs(final Integer a) {
+		final Integer result =
 			(Integer) ops()
 				.run(net.imagej.ops.math.PrimitiveMath.IntegerAbs.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongAbs.class)
-	public long abs(final long a) {
-		final long result =
+	public Long abs(final Long a) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongAbs.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatAbs.class)
-	public float abs(final float a) {
-		final float result =
+	public Float abs(final Float a) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatAbs.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleAbs.class)
-	public double abs(final double a) {
-		final double result =
+	public Double abs(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleAbs.class, a);
 		return result;
 	}
@@ -217,30 +217,30 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerAdd.class)
-	public int add(final int a, final int b) {
-		final int result =
+	public Integer add(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(net.imagej.ops.math.PrimitiveMath.IntegerAdd.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongAdd.class)
-	public long add(final long a, final long b) {
-		final long result =
+	public Long add(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongAdd.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatAdd.class)
-	public float add(final float a, final float b) {
-		final float result =
+	public Float add(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatAdd.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleAdd.class)
-	public double add(final double a, final double b) {
-		final double result =
+	public Double add(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleAdd.class, a,
 				b);
 		return result;
@@ -680,16 +680,16 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerAnd.class)
-	public int and(final int a, final int b) {
-		final int result =
+	public Integer and(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(net.imagej.ops.math.PrimitiveMath.IntegerAnd.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongAnd.class)
-	public long and(final long a, final long b) {
-		final long result =
+	public Long and(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongAnd.class, a, b);
 		return result;
 	}
@@ -711,8 +711,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleArccos.class)
-	public double arccos(final double a) {
-		final double result =
+	public Double arccos(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleArccos.class,
 				a);
 		return result;
@@ -839,8 +839,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleArcsin.class)
-	public double arcsin(final double a) {
-		final double result =
+	public Double arcsin(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleArcsin.class,
 				a);
 		return result;
@@ -877,8 +877,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleArctan.class)
-	public double arctan(final double a) {
-		final double result =
+	public Double arctan(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleArctan.class,
 				a);
 		return result;
@@ -915,8 +915,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleCeil.class)
-	public double ceil(final double a) {
-		final double result =
+	public Double ceil(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleCeil.class, a);
 		return result;
 	}
@@ -937,16 +937,16 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerComplement.class)
-	public int complement(final int a) {
-		final int result =
+	public Integer complement(final Integer a) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerComplement.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongComplement.class)
-	public long complement(final long a) {
-		final long result =
+	public Long complement(final Long a) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongComplement.class,
 				a);
 		return result;
@@ -958,8 +958,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleCos.class)
-	public double cos(final double a) {
-		final double result =
+	public Double cos(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleCos.class, a);
 		return result;
 	}
@@ -980,8 +980,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleCosh.class)
-	public double cosh(final double a) {
-		final double result =
+	public Double cosh(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleCosh.class, a);
 		return result;
 	}
@@ -1062,8 +1062,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleCubeRoot.class)
-	public double cubeRoot(final double a) {
-		final double result =
+	public Double cubeRoot(final Double a) {
+		final Double result =
 			(Double) ops().run(
 				net.imagej.ops.math.PrimitiveMath.DoubleCubeRoot.class, a);
 		return result;
@@ -1085,32 +1085,32 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerDivide.class)
-	public int divide(final int a, final int b) {
-		final int result =
+	public Integer divide(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerDivide.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongDivide.class)
-	public long divide(final long a, final long b) {
-		final long result =
+	public Long divide(final Long a, final Long b) {
+		final Long result =
 			(Long) ops()
 				.run(net.imagej.ops.math.PrimitiveMath.LongDivide.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatDivide.class)
-	public float divide(final float a, final float b) {
-		final float result =
+	public Float divide(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatDivide.class, a,
 				b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleDivide.class)
-	public double divide(final double a, final double b) {
-		final double result =
+	public Double divide(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleDivide.class,
 				a, b);
 		return result;
@@ -1153,8 +1153,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleExp.class)
-	public double exp(final double a) {
-		final double result =
+	public Double exp(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleExp.class, a);
 		return result;
 	}
@@ -1190,8 +1190,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleFloor.class)
-	public double floor(final double a) {
-		final double result =
+	public Double floor(final Double a) {
+		final Double result =
 			(Double) ops()
 				.run(net.imagej.ops.math.PrimitiveMath.DoubleFloor.class, a);
 		return result;
@@ -1245,16 +1245,16 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerLeftShift.class)
-	public int leftShift(final int a, final int b) {
-		final int result =
+	public Integer leftShift(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerLeftShift.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongLeftShift.class)
-	public long leftShift(final long a, final long b) {
-		final long result =
+	public Long leftShift(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongLeftShift.class,
 				a, b);
 		return result;
@@ -1266,8 +1266,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleLog.class)
-	public double log(final double a) {
-		final double result =
+	public Double log(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleLog.class, a);
 		return result;
 	}
@@ -1303,8 +1303,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleLog10.class)
-	public double log10(final double a) {
-		final double result =
+	public Double log10(final Double a) {
+		final Double result =
 			(Double) ops()
 				.run(net.imagej.ops.math.PrimitiveMath.DoubleLog10.class, a);
 		return result;
@@ -1326,8 +1326,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleLogOnePlusX.class)
-	public double logOnePlusX(final double a) {
-		final double result =
+	public Double logOnePlusX(final Double a) {
+		final Double result =
 			(Double) ops().run(
 				net.imagej.ops.math.PrimitiveMath.DoubleLogOnePlusX.class, a);
 		return result;
@@ -1349,30 +1349,30 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerMax.class)
-	public int max(final int a, final int b) {
-		final int result =
+	public Integer max(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(net.imagej.ops.math.PrimitiveMath.IntegerMax.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongMax.class)
-	public long max(final long a, final long b) {
-		final long result =
+	public Long max(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongMax.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatMax.class)
-	public float max(final float a, final float b) {
-		final float result =
+	public Float max(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatMax.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleMax.class)
-	public double max(final double a, final double b) {
-		final double result =
+	public Double max(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleMax.class, a,
 				b);
 		return result;
@@ -1395,30 +1395,30 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerMin.class)
-	public int min(final int a, final int b) {
-		final int result =
+	public Integer min(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(net.imagej.ops.math.PrimitiveMath.IntegerMin.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongMin.class)
-	public long min(final long a, final long b) {
-		final long result =
+	public Long min(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongMin.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatMin.class)
-	public float min(final float a, final float b) {
-		final float result =
+	public Float min(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatMin.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleMin.class)
-	public double min(final double a, final double b) {
-		final double result =
+	public Double min(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleMin.class, a,
 				b);
 		return result;
@@ -1441,32 +1441,32 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerMultiply.class)
-	public int multiply(final int a, final int b) {
-		final int result =
+	public Integer multiply(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerMultiply.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongMultiply.class)
-	public long multiply(final long a, final long b) {
-		final long result =
+	public Long multiply(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongMultiply.class, a,
 				b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatMultiply.class)
-	public float multiply(final float a, final float b) {
-		final float result =
+	public Float multiply(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatMultiply.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleMultiply.class)
-	public double multiply(final double a, final double b) {
-		final double result =
+	public Double multiply(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(
 				net.imagej.ops.math.PrimitiveMath.DoubleMultiply.class, a, b);
 		return result;
@@ -1524,30 +1524,30 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerNegate.class)
-	public int negate(final int a) {
-		final int result =
+	public Integer negate(final Integer a) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerNegate.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongNegate.class)
-	public long negate(final long a) {
-		final long result =
+	public Long negate(final Long a) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongNegate.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatNegate.class)
-	public float negate(final float a) {
-		final float result =
+	public Float negate(final Float a) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatNegate.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleNegate.class)
-	public double negate(final double a) {
-		final double result =
+	public Double negate(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleNegate.class,
 				a);
 		return result;
@@ -1569,16 +1569,16 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerOr.class)
-	public int or(final int a, final int b) {
-		final int result =
+	public Integer or(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(net.imagej.ops.math.PrimitiveMath.IntegerOr.class, a,
 				b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongOr.class)
-	public long or(final long a, final long b) {
-		final long result =
+	public Long or(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongOr.class, a, b);
 		return result;
 	}
@@ -1600,8 +1600,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoublePower.class)
-	public double power(final double a, final double b) {
-		final double result =
+	public Double power(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoublePower.class,
 				a, b);
 		return result;
@@ -1692,32 +1692,32 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerRemainder.class)
-	public int remainder(final int a, final int b) {
-		final int result =
+	public Integer remainder(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerRemainder.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongRemainder.class)
-	public long remainder(final long a, final long b) {
-		final long result =
+	public Long remainder(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongRemainder.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatRemainder.class)
-	public float remainder(final float a, final float b) {
-		final float result =
+	public Float remainder(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatRemainder.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleRemainder.class)
-	public double remainder(final double a, final double b) {
-		final double result =
+	public Double remainder(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(
 				net.imagej.ops.math.PrimitiveMath.DoubleRemainder.class, a, b);
 		return result;
@@ -1729,16 +1729,16 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerRightShift.class)
-	public int rightShift(final int a, final int b) {
-		final int result =
+	public Integer rightShift(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerRightShift.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongRightShift.class)
-	public long rightShift(final long a, final long b) {
-		final long result =
+	public Long rightShift(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongRightShift.class,
 				a, b);
 		return result;
@@ -1750,15 +1750,15 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatRound.class)
-	public float round(final float a) {
-		final float result =
+	public Float round(final Float a) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatRound.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleRound.class)
-	public double round(final double a) {
-		final double result =
+	public Double round(final Double a) {
+		final Double result =
 			(Double) ops()
 				.run(net.imagej.ops.math.PrimitiveMath.DoubleRound.class, a);
 		return result;
@@ -1810,15 +1810,15 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatSignum.class)
-	public float signum(final float a) {
-		final float result =
+	public Float signum(final Float a) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatSignum.class, a);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleSignum.class)
-	public double signum(final double a) {
-		final double result =
+	public Double signum(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleSignum.class,
 				a);
 		return result;
@@ -1840,8 +1840,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleSin.class)
-	public double sin(final double a) {
-		final double result =
+	public Double sin(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleSin.class, a);
 		return result;
 	}
@@ -1892,8 +1892,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleSinh.class)
-	public double sinh(final double a) {
-		final double result =
+	public Double sinh(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleSinh.class, a);
 		return result;
 	}
@@ -1929,8 +1929,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleSqrt.class)
-	public double sqrt(final double a) {
-		final double result =
+	public Double sqrt(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleSqrt.class, a);
 		return result;
 	}
@@ -1966,32 +1966,32 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerSubtract.class)
-	public int subtract(final int a, final int b) {
-		final int result =
+	public Integer subtract(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(
 				net.imagej.ops.math.PrimitiveMath.IntegerSubtract.class, a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongSubtract.class)
-	public long subtract(final long a, final long b) {
-		final long result =
+	public Long subtract(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongSubtract.class, a,
 				b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.FloatSubtract.class)
-	public float subtract(final float a, final float b) {
-		final float result =
+	public Float subtract(final Float a, final Float b) {
+		final Float result =
 			(Float) ops().run(net.imagej.ops.math.PrimitiveMath.FloatSubtract.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleSubtract.class)
-	public double subtract(final double a, final double b) {
-		final double result =
+	public Double subtract(final Double a, final Double b) {
+		final Double result =
 			(Double) ops().run(
 				net.imagej.ops.math.PrimitiveMath.DoubleSubtract.class, a, b);
 		return result;
@@ -2034,8 +2034,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleTan.class)
-	public double tan(final double a) {
-		final double result =
+	public Double tan(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleTan.class, a);
 		return result;
 	}
@@ -2056,8 +2056,8 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.DoubleTanh.class)
-	public double tanh(final double a) {
-		final double result =
+	public Double tanh(final Double a) {
+		final Double result =
 			(Double) ops().run(net.imagej.ops.math.PrimitiveMath.DoubleTanh.class, a);
 		return result;
 	}
@@ -2094,8 +2094,8 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(
 		op = net.imagej.ops.math.PrimitiveMath.IntegerUnsignedRightShift.class)
-	public int unsignedRightShift(final int a, final int b) {
-		final int result =
+	public Integer unsignedRightShift(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops()
 				.run(net.imagej.ops.math.PrimitiveMath.IntegerUnsignedRightShift.class,
 					a, b);
@@ -2104,8 +2104,8 @@ public class MathNamespace extends AbstractNamespace {
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongUnsignedRightShift.class)
 	public
-		long unsignedRightShift(final long a, final long b) {
-		final long result =
+		Long unsignedRightShift(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(
 				net.imagej.ops.math.PrimitiveMath.LongUnsignedRightShift.class, a, b);
 		return result;
@@ -2117,16 +2117,16 @@ public class MathNamespace extends AbstractNamespace {
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.IntegerXor.class)
-	public int xor(final int a, final int b) {
-		final int result =
+	public Integer xor(final Integer a, final Integer b) {
+		final Integer result =
 			(Integer) ops().run(net.imagej.ops.math.PrimitiveMath.IntegerXor.class,
 				a, b);
 		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.math.PrimitiveMath.LongXor.class)
-	public long xor(final long a, final long b) {
-		final long result =
+	public Long xor(final Long a, final Long b) {
+		final Long result =
 			(Long) ops().run(net.imagej.ops.math.PrimitiveMath.LongXor.class, a, b);
 		return result;
 	}
