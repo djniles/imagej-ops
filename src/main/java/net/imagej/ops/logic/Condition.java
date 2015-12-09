@@ -30,16 +30,13 @@
 
 package net.imagej.ops.logic;
 
-import net.imagej.ops.ComputerOp;
-import net.imglib2.type.logic.BoolType;
-
 /**
  * An interface that can be tested for truth or falsity for a given input.
  * 
  * @author Barry DeZonia
  * @author Aparna Pal
  */
-public interface Condition<T> extends ComputerOp<T, BoolType> {
+public interface Condition<T> {
 
 	boolean isTrue(T val);
 
