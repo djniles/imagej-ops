@@ -69,11 +69,6 @@ public class ConvertNamespace extends AbstractNamespace {
 
 	// -- Convert namespace ops --
 
-	@OpMethod(op = Ops.Convert.Clip.class)
-	public Object clip(final Object... args) {
-		return ops().run(Ops.Convert.Clip.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.clip.ClipRealTypes.class)
 	public <I extends RealType<I>, O extends RealType<O>> O clip(final O out,
 		final I in)
@@ -84,11 +79,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Copy.class)
-	public Object copy(final Object... args) {
-		return ops().run(Ops.Convert.Clip.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.copy.CopyRealTypes.class)
 	public <I extends RealType<I>, O extends RealType<O>> O copy(final O out,
 		final I in)
@@ -97,11 +87,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		final O result =
 			(O) ops().run(net.imagej.ops.convert.copy.CopyRealTypes.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.ImageType.class)
-	public Object imageType(final Object... args) {
-		return ops().run(Ops.Convert.ImageType.class, args);
 	}
 
 	@OpMethod(
@@ -118,11 +103,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.NormalizeScale.class)
-	public Object normalizeScale(final Object... args) {
-		return ops().run(Ops.Convert.NormalizeScale.class, args);
-	}
-
 	@OpMethod(
 		op = net.imagej.ops.convert.normalizeScale.NormalizeScaleRealTypes.class)
 	public <I extends RealType<I>, O extends RealType<O>> O normalizeScale(
@@ -136,11 +116,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Scale.class)
-	public Object scale(final Object... args) {
-		return ops().run(Ops.Convert.Scale.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.scale.ScaleRealTypes.class)
 	public <I extends RealType<I>, O extends RealType<O>> O scale(final O out,
 		final I in)
@@ -149,11 +124,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		final O result =
 			(O) ops().run(net.imagej.ops.convert.scale.ScaleRealTypes.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Bit.class)
-	public Object bit(final Object... args) {
-		return ops().run(Ops.Convert.Bit.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToBit.class)
@@ -170,11 +140,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(BitType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.ComplexToBit.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Uint2.class)
-	public Object uint2(final Object... args) {
-		return ops().run(Ops.Convert.Uint2.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint2.class)
@@ -213,11 +178,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Uint4.class)
-	public Object uint4(final Object... args) {
-		return ops().run(Ops.Convert.Uint4.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint4.class)
 	public <C extends ComplexType<C>> Unsigned4BitType uint4(final C in) {
 		final Unsigned4BitType result =
@@ -252,11 +212,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(Unsigned4BitType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.IntegerToUint4.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Int8.class)
-	public Object int8(final Object... args) {
-		return ops().run(Ops.Convert.Int8.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToInt8.class)
@@ -295,11 +250,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Uint8.class)
-	public Object uint8(final Object... args) {
-		return ops().run(Ops.Convert.Uint8.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint8.class)
 	public <C extends ComplexType<C>> UnsignedByteType uint8(final C in) {
 		final UnsignedByteType result =
@@ -334,11 +284,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(UnsignedByteType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.IntegerToUint8.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Uint12.class)
-	public Object uint12(final Object... args) {
-		return ops().run(Ops.Convert.Uint12.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint12.class)
@@ -377,11 +322,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Int16.class)
-	public Object int16(final Object... args) {
-		return ops().run(Ops.Convert.Int16.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToInt16.class)
 	public <C extends ComplexType<C>> ShortType int16(final C in) {
 		final ShortType result =
@@ -416,11 +356,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(ShortType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.IntegerToInt16.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Uint16.class)
-	public Object uint16(final Object... args) {
-		return ops().run(Ops.Convert.Uint16.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint16.class)
@@ -459,11 +394,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Int32.class)
-	public Object int32(final Object... args) {
-		return ops().run(Ops.Convert.Int32.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.IntegerToInt32.class)
 	public <T extends IntegerType<T>> IntType int32(final T in) {
 		final IntType result =
@@ -498,11 +428,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(IntType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.ComplexToInt32.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Uint32.class)
-	public Object uint32(final Object... args) {
-		return ops().run(Ops.Convert.Uint32.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint32.class)
@@ -541,11 +466,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Int64.class)
-	public Object int64(final Object... args) {
-		return ops().run(Ops.Convert.Int64.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToInt64.class)
 	public <C extends ComplexType<C>> LongType int64(final C in) {
 		final LongType result =
@@ -580,11 +500,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(LongType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.IntegerToInt64.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Uint64.class)
-	public Object uint64(final Object... args) {
-		return ops().run(Ops.Convert.Uint64.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToUint64.class)
@@ -623,11 +538,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Uint128.class)
-	public Object uint128(final Object... args) {
-		return ops().run(Ops.Convert.Uint128.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.IntegerToUint128.class)
 	public <T extends IntegerType<T>> Unsigned128BitType uint128(final T in) {
 		final Unsigned128BitType result =
@@ -664,11 +574,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Float32.class)
-	public Object float32(final Object... args) {
-		return ops().run(Ops.Convert.Float32.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToFloat32.class)
 	public <C extends ComplexType<C>> FloatType float32(final C in) {
 		final FloatType result =
@@ -685,11 +590,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(FloatType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.ComplexToFloat32.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Cfloat32.class)
-	public Object cfloat32(final Object... args) {
-		return ops().run(Ops.Convert.Cfloat32.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToCfloat32.class)
@@ -710,11 +610,6 @@ public class ConvertNamespace extends AbstractNamespace {
 		return result;
 	}
 
-	@OpMethod(op = Ops.Convert.Float64.class)
-	public Object float64(final Object... args) {
-		return ops().run(Ops.Convert.Float64.class, args);
-	}
-
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToFloat64.class)
 	public <C extends ComplexType<C>> DoubleType float64(final C in) {
 		final DoubleType result =
@@ -731,11 +626,6 @@ public class ConvertNamespace extends AbstractNamespace {
 			(DoubleType) ops().run(
 				net.imagej.ops.convert.ConvertTypes.ComplexToFloat64.class, out, in);
 		return result;
-	}
-
-	@OpMethod(op = Ops.Convert.Cfloat64.class)
-	public Object cfloat64(final Object... args) {
-		return ops().run(Ops.Convert.Cfloat64.class, args);
 	}
 
 	@OpMethod(op = net.imagej.ops.convert.ConvertTypes.ComplexToCfloat64.class)

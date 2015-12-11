@@ -60,12 +60,6 @@ public class ImageNamespace extends AbstractNamespace {
 	// -- ascii --
 
 	/** Executes the "ascii" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.ASCII.class)
-	public Object ascii(final Object... args) {
-		return ops().run(Ops.Image.ASCII.NAME, args);
-	}
-
-	/** Executes the "ascii" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.image.ascii.DefaultASCII.class)
 	public <T extends RealType<T>> String ascii(final IterableInterval<T> image) {
 		final String result = (String) ops().run(
@@ -107,12 +101,6 @@ public class ImageNamespace extends AbstractNamespace {
 	}
 
 	// -- crop --
-
-	/** Executes the "crop" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Crop.class)
-	public Object crop(final Object... args) {
-		return ops().run(Ops.Image.Crop.NAME, args);
-	}
 
 	/** Executes the "crop" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.image.crop.CropImgPlus.class)
@@ -160,12 +148,6 @@ public class ImageNamespace extends AbstractNamespace {
 	// -- equation --
 
 	/** Executes the "equation" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Equation.class)
-	public Object equation(final Object... args) {
-		return ops().run(Ops.Image.Equation.NAME, args);
-	}
-
-	/** Executes the "equation" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.image.equation.DefaultEquation.class)
 	public <T extends RealType<T>> IterableInterval<T> equation(final String in) {
 		@SuppressWarnings("unchecked")
@@ -185,12 +167,6 @@ public class ImageNamespace extends AbstractNamespace {
 	}
 
 	// -- histogram --
-
-	/** Executes the "histogram" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Histogram.class)
-	public Object histogram(final Object... args) {
-		return ops().run(Ops.Image.Histogram.NAME, args);
-	}
 
 	/** Executes the "histogram" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.image.histogram.HistogramCreate.class)
@@ -215,12 +191,6 @@ public class ImageNamespace extends AbstractNamespace {
 	// -- invert --
 
 	/** Executes the "invert" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Invert.class)
-	public Object invert(final Object... args) {
-		return ops().run(Ops.Image.Invert.NAME, args);
-	}
-
-	/** Executes the "invert" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.image.invert.InvertIterableInterval.class)
 	public <I extends RealType<I>, O extends RealType<O>> IterableInterval<O> invert(
 			final IterableInterval<O> out, final IterableInterval<I> in) {
@@ -232,12 +202,6 @@ public class ImageNamespace extends AbstractNamespace {
 	}
 
 	// -- normalize --
-
-	/** Executes the "normalize" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Normalize.class)
-	public Object normalize(final Object... args) {
-		return ops().run(Ops.Image.Normalize.NAME, args);
-	}
 
 	@OpMethod(op = net.imagej.ops.image.normalize.NormalizeIterableComputer.class)
 	public
@@ -399,12 +363,6 @@ public class ImageNamespace extends AbstractNamespace {
 	// -- project --
 
 	/** Executes the "project" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Project.class)
-	public Object project(final Object... args) {
-		return ops().run(Ops.Image.Project.NAME, args);
-	}
-
-	/** Executes the "project" operation on the given arguments. */
 	@OpMethod(ops = {
 			net.imagej.ops.image.project.DefaultProjectParallel.class,
 			net.imagej.ops.image.project.ProjectRAIToIterableInterval.class })
@@ -418,12 +376,6 @@ public class ImageNamespace extends AbstractNamespace {
 	}
 
 	// -- scale --
-
-	/** Executes the "scale" operation on the given arguments. */
-	@OpMethod(op = Ops.Image.Scale.class)
-	public Object scale(final Object... args) {
-		return ops().run(Ops.Image.Scale.NAME, args);
-	}
 
 	/** Executes the "scale" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.image.scale.ScaleImg.class)
