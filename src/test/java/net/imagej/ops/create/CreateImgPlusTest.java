@@ -49,6 +49,6 @@ public class CreateImgPlusTest extends AbstractOpTest {
 	@Test
 	public void createImgPlusTest() {
 		assertEquals(ops.create().imgPlus(
-			ops.create().img(new long[] { 10, 9, 8 })).getClass(), ImgPlus.class);
+			ops.create().img(10, 9, 8)), ImgPlus.class);
 	}
 }

@@ -41,6 +41,9 @@ import net.imagej.ops.bufferfactories.ImgImgSameTypeFactory;
 import net.imagej.ops.map.MapOp;
 import net.imagej.ops.special.AbstractInplaceOp;
 import net.imagej.ops.special.AbstractUnaryComputerOp;
+import net.imagej.ops.special.Computers;
+import net.imagej.ops.special.InplaceOp;
+import net.imagej.ops.special.Inplaces;
 import net.imagej.ops.special.UnaryComputerOp;
 import net.imagej.ops.special.UnaryOutputFactory;
 import net.imglib2.Cursor;
@@ -54,23 +57,24 @@ public class JoinTest extends AbstractOpTest {
 
 	private Img<ByteType> in;
 	private Img<ByteType> out;
-	private Op inplaceOp;
-	private Op computerOp;
+	private InplaceOp<Img<ByteType>> inplaceOp;
+	private UnaryComputerOp<Img<ByteType>, Img<ByteType>> computerOp;
 
 	@Before
 	public void init() {
 		final long[] dims = new long[] { 10, 10 };
 		in = generateByteArrayTestImg(false, dims);
 		out = generateByteArrayTestImg(false, dims);
-		inplaceOp = ops.op(MapOp.class, Img.class, new AddOneInplace());
-		computerOp =
-			ops.op(MapOp.class, Img.class, Img.class, new AddOneComputer());
+		// FIXME: Clean up the typing here.
+		inplaceOp = (InplaceOp) Inplaces.unary(ops, MapOp.class, Img.class,
+			new AddOneInplace());
+		computerOp = (UnaryComputerOp) Computers.unary(ops, MapOp.class, Img.class,
+			Img.class, new AddOneComputer());
 	}
 
 	@Test
 	public void testJoin2Inplaces() {
-		final Op op = ops.op(DefaultJoin2Inplaces.class, in, inplaceOp, inplaceOp);
-		op.run();
+		ops.run(DefaultJoin2Inplaces.class, in, inplaceOp, inplaceOp);
 
 		// test
 		final Cursor<ByteType> c = in.cursor();
@@ -82,10 +86,8 @@ public class JoinTest extends AbstractOpTest {
 
 	@Test
 	public void testJoinComputerAndInplace() {
-		final Op op =
-			ops.op(DefaultJoinComputerAndInplace.class, out, in, computerOp,
-				inplaceOp);
-		op.run();
+		ops.run(DefaultJoinComputerAndInplace.class, out, in, computerOp,
+			inplaceOp);
 
 		// test
 		final Cursor<ByteType> c = out.cursor();
@@ -97,10 +99,8 @@ public class JoinTest extends AbstractOpTest {
 
 	@Test
 	public void testJoinInplaceAndComputer() {
-		final Op op =
-			ops.op(DefaultJoinInplaceAndComputer.class, out, in, inplaceOp,
-				computerOp);
-		op.run();
+		ops.run(DefaultJoinInplaceAndComputer.class, out, in, inplaceOp,
+			computerOp);
 
 		// test
 		final Cursor<ByteType> c = out.cursor();

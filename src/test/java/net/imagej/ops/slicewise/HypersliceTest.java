@@ -36,6 +36,7 @@ import java.util.Iterator;
 
 import net.imagej.ops.AbstractOpTest;
 import net.imagej.ops.OpService;
+import net.imagej.ops.Ops;
 import net.imagej.ops.special.AbstractUnaryComputerOp;
 import net.imglib2.Cursor;
 import net.imglib2.FinalInterval;
@@ -88,7 +89,8 @@ public class HypersliceTest extends AbstractOpTest {
 		// selected interval XY
 		final int[] xyAxis = new int[] { 0, 1 };
 
-		ops.slicewise(out, in, new DummyOp(), xyAxis);
+		// FIXME: There are problems lurking here...
+		ops.run(Ops.Slicewise.class, out, in, new DummyOp(), xyAxis);
 
 		for (final Cursor<ByteType> cur = out.cursor(); cur.hasNext();) {
 			cur.fwd();
@@ -121,7 +123,9 @@ public class HypersliceTest extends AbstractOpTest {
 		// selected interval XYZ
 		final int[] xyAxis = new int[] { 0, 1, 2 };
 
-		ops.slicewise(outSequence, inSequence, new DummyOp(), xyAxis);
+		// FIXME: There are problems lurking here...
+		ops.run(Ops.Slicewise.class, outSequence, inSequence, new DummyOp(),
+			xyAxis);
 
 		for (final Cursor<ByteType> cur = outSequence.cursor(); cur.hasNext();) {
 			cur.fwd();

@@ -32,6 +32,7 @@ package net.imagej.ops.filter;
 import static org.junit.Assert.assertEquals;
 
 import net.imagej.ops.AbstractOpTest;
+import net.imagej.ops.Ops;
 import net.imglib2.Cursor;
 import net.imglib2.IterableInterval;
 import net.imglib2.Point;
@@ -74,8 +75,9 @@ public class FFTTest extends AbstractOpTest {
 				dimensions);
 
 			@SuppressWarnings("unchecked")
-			final Img<ComplexFloatType> out = (Img<ComplexFloatType>) ops.filter()
-				.fft(in);
+			// FIXME: There are problems lurking here...
+			final Img<ComplexFloatType> out = (Img<ComplexFloatType>) ops.run(
+				Ops.Filter.FFT.class, in);
 			ops.filter().ifft(inverse, out);
 
 			assertImagesEqual(in, inverse, .00005f);
@@ -119,21 +121,24 @@ public class FFTTest extends AbstractOpTest {
 			// parameter we have to pass null for the
 			// output parameter).
 			@SuppressWarnings("unchecked")
-			final Img<ComplexFloatType> fft1 = (Img<ComplexFloatType>) ops.filter()
-				.fft(null, inOriginal, null, false);
+			// FIXME: Convert to type-safe op method call.
+			final Img<ComplexFloatType> fft1 = (Img<ComplexFloatType>) ops.run(
+				Ops.Filter.FFT.class, null, inOriginal, null, false);
 
 			// call FFT passing true for "fast" (in order to pass the optional
 			// parameter we have to pass null for the
 			// output parameter). The FFT op will pad the input to the fast
 			// size.
 			@SuppressWarnings("unchecked")
-			final Img<ComplexFloatType> fft2 = (Img<ComplexFloatType>) ops.filter()
-				.fft(null, inOriginal, null, true);
+			// FIXME: Convert to type-safe op method call.
+			final Img<ComplexFloatType> fft2 = (Img<ComplexFloatType>) ops.run(
+				Ops.Filter.FFT.class, null, inOriginal, null, true);
 
 			// call fft using the img that was created with the fast size
 			@SuppressWarnings("unchecked")
-			final Img<ComplexFloatType> fft3 = (Img<ComplexFloatType>) ops.filter()
-				.fft(inFast);
+			// FIXME: Convert to type-safe op method call.
+			final Img<ComplexFloatType> fft3 = (Img<ComplexFloatType>) ops.run(
+				Ops.Filter.FFT.class, inFast);
 
 			// create an image to be used for the inverse, using the original
 			// size

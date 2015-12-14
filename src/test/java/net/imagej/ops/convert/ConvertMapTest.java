@@ -34,6 +34,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import net.imagej.ops.AbstractOpTest;
+import net.imagej.ops.Ops;
 import net.imagej.ops.convert.ConvertTypes.ComplexToFloat32;
 import net.imagej.ops.convert.ConvertTypes.ComplexToUint8;
 import net.imglib2.Cursor;
@@ -76,7 +77,8 @@ public class ConvertMapTest extends AbstractOpTest {
 				outC1.next().getRealDouble(), 0d);
 		}
 
-		ops.map(out, in, new ComplexToFloat32<C>());
+		// FIXME: Convert to type-safe op method call.
+		ops.run(Ops.Map.class, out, in, new ComplexToFloat32<C>());
 
 		final Cursor<UnsignedByteType> inC2 = in.cursor();
 		final Cursor<FloatType> outC2 = out.cursor();
@@ -97,7 +99,8 @@ public class ConvertMapTest extends AbstractOpTest {
 		final byte[] outArray = { 4, 123, 18, 64, 90, 120, 12, 17, 73 };
 		final Img<UnsignedByteType> out = generateUnsignedByteImg(outArray);
 
-		ops.map(out, in, new ComplexToUint8<C>());
+		// FIXME: Convert to type-safe op method call.
+		ops.run(Ops.Map.class, out, in, new ComplexToUint8<C>());
 
 		final Cursor<FloatType> inC = in.cursor();
 		final Cursor<UnsignedByteType> outC = out.cursor();

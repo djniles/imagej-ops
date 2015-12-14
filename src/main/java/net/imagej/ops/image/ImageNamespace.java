@@ -368,7 +368,7 @@ public class ImageNamespace extends AbstractNamespace {
 			net.imagej.ops.image.project.ProjectRAIToIterableInterval.class })
 	public <T, V> IterableInterval<V> project(final IterableInterval<V> out,
 			final RandomAccessibleInterval<T> in,
-			final UnaryComputerOp<Iterable<T>, V> method, final int dim) {
+			final UnaryComputerOp<? extends Iterable<T>, V> method, final int dim) {
 		@SuppressWarnings("unchecked")
 		final IterableInterval<V> result = (IterableInterval<V>) ops().run(
 				net.imagej.ops.Ops.Image.Project.class, out, in, method, dim);

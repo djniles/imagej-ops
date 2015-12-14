@@ -36,6 +36,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Random;
 
 import net.imagej.ops.AbstractOpTest;
+import net.imagej.ops.Ops;
 import net.imglib2.FinalDimensions;
 import net.imglib2.FinalInterval;
 import net.imglib2.img.Img;
@@ -107,7 +108,8 @@ public class CreateImgTest extends AbstractOpTest {
 			}
 
 			// create img
-			final Img<?> img = (Img<?>) ops.create().img(dim);
+			// FIXME: Use type-safe op method call.
+			final Img<?> img = (Img<?>) ops.run(Ops.Create.Img.class, dim);
 
 			assertArrayEquals("Image Dimensions:", dim, Intervals
 				.dimensionsAsLongArray(img));
@@ -131,13 +133,15 @@ public class CreateImgTest extends AbstractOpTest {
 
 		final long[] dim = new long[] { 10, 10, 10 };
 
-		assertEquals("Image Factory: ", ArrayImgFactory.class, ((Img<?>) ops
-			.create().img(dim, null, new ArrayImgFactory<DoubleType>())).factory()
-			.getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Factory: ", ArrayImgFactory.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, null, new ArrayImgFactory<DoubleType>()))
+				.factory().getClass());
 
-		assertEquals("Image Factory: ", CellImgFactory.class, ((Img<?>) ops
-			.create().img(dim, null, new CellImgFactory<DoubleType>())).factory()
-			.getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Factory: ", CellImgFactory.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, null, new CellImgFactory<DoubleType>()))
+				.factory().getClass());
 
 	}
 
@@ -146,23 +150,30 @@ public class CreateImgTest extends AbstractOpTest {
 
 		final long[] dim = new long[] { 10, 10, 10 };
 
-		assertEquals("Image Type: ", BitType.class, ((Img<?>) ops.create().img(dim,
-			new BitType())).firstElement().getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Type: ", BitType.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, new BitType())).firstElement().getClass());
 
-		assertEquals("Image Type: ", ByteType.class, ((Img<?>) ops.create().img(
-			dim, new ByteType())).firstElement().getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Type: ", ByteType.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, new ByteType())).firstElement().getClass());
 
-		assertEquals("Image Type: ", UnsignedByteType.class, ((Img<?>) ops.create()
-			.img(dim, new UnsignedByteType())).firstElement().getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Type: ", UnsignedByteType.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, new UnsignedByteType())).firstElement()
+				.getClass());
 
-		assertEquals("Image Type: ", IntType.class, ((Img<?>) ops.create().img(dim,
-			new IntType())).firstElement().getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Type: ", IntType.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, new IntType())).firstElement().getClass());
 
-		assertEquals("Image Type: ", FloatType.class, ((Img<?>) ops.create().img(
-			dim, new FloatType())).firstElement().getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Type: ", FloatType.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, new FloatType())).firstElement().getClass());
 
-		assertEquals("Image Type: ", DoubleType.class, ((Img<?>) ops.create().img(
-			dim, new DoubleType())).firstElement().getClass());
+		// FIXME: Use type-safe op method call.
+		assertEquals("Image Type: ", DoubleType.class, ((Img<?>) ops.run(
+			Ops.Create.Img.class, dim, new DoubleType())).firstElement().getClass());
 	}
 
 	@Test
