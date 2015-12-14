@@ -32,6 +32,8 @@ package net.imagej.ops.create;
 
 import net.imagej.ImgPlus;
 import net.imagej.ImgPlusMetadata;
+import net.imagej.convert.ConvertIntArrayToFinalInterval;
+import net.imagej.convert.ConvertLongArrayToFinalInterval;
 import net.imagej.ops.AbstractNamespace;
 import net.imagej.ops.Namespace;
 import net.imagej.ops.OpMethod;
@@ -70,25 +72,33 @@ public class CreateNamespace extends AbstractNamespace {
 	}
 
 	/**
-	 * Helper method for {@link #img(Object...)} to ensure {@code int} varargs are
-	 * not expanded. Necessary because a {@code Long[]} is also an
-	 * {@code Object[]}. See https://github.com/imagej/imagej-ops/pull/115
+	 * Executes the "create.img" op with the given arguments.
+	 * <p>
+	 * Delegates to {@link #img(Interval)} via a call to the
+	 * {@link ConvertIntArrayToFinalInterval} converter.
+	 * </p>
 	 */
-	public Object img(final Integer... dims) {
+	public <T extends Type<T>> Img<T> img(final Integer... dims) {
 		int[] ints = new int[dims.length];
 		for (int i=0; i<ints.length; i++) ints[i] = dims[i];
-		return img(ints);
+		@SuppressWarnings("unchecked")
+		final Img<T> result = (Img<T>) ops().run(Ops.Create.Img.class, ints);
+		return result;
 	}
 
 	/**
-	 * Helper method for {@link #img(Object...)} to ensure {@code long} varargs
-	 * are not expanded. Necessary because a {@code Long[]} is also an
-	 * {@code Object[]}. See https://github.com/imagej/imagej-ops/pull/115
+	 * Executes the "create.img" op with the given arguments.
+	 * <p>
+	 * Delegates to {@link #img(Interval)} via a call to the
+	 * {@link ConvertLongArrayToFinalInterval} converter.
+	 * </p>
 	 */
-	public Object img(final Long... dims) {
+	public <T extends Type<T>> Img<T> img(final Long... dims) {
 		long[] longs = new long[dims.length];
 		for (int i=0; i<longs.length; i++) longs[i] = dims[i];
-		return img(longs);
+		@SuppressWarnings("unchecked")
+		final Img<T> result = (Img<T>) ops().run(Ops.Create.Img.class, longs);
+		return result;
 	}
 
 	@OpMethod(op = net.imagej.ops.create.img.CreateImgFromImg.class)
