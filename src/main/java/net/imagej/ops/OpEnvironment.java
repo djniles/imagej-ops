@@ -642,8 +642,8 @@ public interface OpEnvironment extends Contextual {
 	/** Executes the "slicewise" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.slicewise.SlicewiseRAI2RAI.class)
 	default <I, O> RandomAccessibleInterval<O> slicewise(
-		final RandomAccessibleInterval<O> out,
-		final RandomAccessibleInterval<I> in, final UnaryComputerOp<I, O> op,
+		final RandomAccessibleInterval<O> out, final RandomAccessibleInterval<I> in,
+		final UnaryComputerOp<RandomAccessibleInterval<I>, RandomAccessibleInterval<O>> op,
 		final int... axisIndices)
 	{
 		@SuppressWarnings("unchecked")
@@ -657,8 +657,8 @@ public interface OpEnvironment extends Contextual {
 	/** Executes the "slicewise" operation on the given arguments. */
 	@OpMethod(op = net.imagej.ops.slicewise.SlicewiseRAI2RAI.class)
 	default <I, O> RandomAccessibleInterval<O> slicewise(
-		final RandomAccessibleInterval<O> out,
-		final RandomAccessibleInterval<I> in, final UnaryComputerOp<I, O> op,
+		final RandomAccessibleInterval<O> out, final RandomAccessibleInterval<I> in,
+		final UnaryComputerOp<RandomAccessibleInterval<I>, RandomAccessibleInterval<O>> op,
 		final int[] axisIndices, final boolean dropSingleDimensions)
 	{
 		@SuppressWarnings("unchecked")
